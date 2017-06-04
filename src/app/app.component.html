@@ -1,8 +1,4 @@
 <h1>
   {{title}}
 </h1>
-<ztw-text-editor (uploadImg)="uploadImg($event)"></ztw-text-editor>
-
-<app-test></app-test>
-<div #div1>hello</div>
-<button (click)="next()">next</button>
+<ztw-text-editor style="width:800px;height:600px" #textEdit (uploadImg)="uploadImg($event)" [disUpload]="false"></ztw-text-editor>

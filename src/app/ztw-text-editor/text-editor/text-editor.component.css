@@ -1,10 +1,21 @@
 .main{
-  height:600px;
-  width:1300px;
+  height:100%;
+  width:100%;
+}
+.flexLeft{
   display:flex;
+  flex-wrap:wrap;
 }
 #ztw_textEditor{
   overflow: auto;
+}
+.container{
+  border:1px solid gainsboro;
+  padding:5px;
+  border-radius:5px;
+}
+:host{
+  display:inline-block;
 }
 :host /deep/ .mr1{
   margin-right:1rem;
@@ -19,13 +30,6 @@
   background:transparent;
 }
 
-.container{
-  flex:1;
-  padding:5px;
-  border:1px solid black;
-  outline:none;
-  position:relative;
-}
 :host /deep/ .between{
   display:flex;
   justify-content: space-between;
@@ -34,6 +38,7 @@
 :host /deep/ .full{
   width:100%;
   height:100%;
+  position:relative;
   outline: none;
 }
 :host /deep/ .center{
@@ -81,13 +86,14 @@
 :host /deep/ .btn-default:active{
   box-shadow:0 0 2px gray;
 }
-:host /deep/ .btn-default[disabled]{
+:host /deep/ .btn[disabled]{
   color:gainsboro;
-  border:1px solid gainsboro;
+
   box-shadow: none;
 }
-:host /deep/ .btn-default[disabled]:hover{
+:host /deep/ .btn[disabled]:hover{
   box-shadow: none;
+  background:transparent;
   cursor:not-allowed;
 }
 :host /deep/ .btn2{

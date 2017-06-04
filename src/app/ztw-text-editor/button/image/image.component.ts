@@ -1,4 +1,4 @@
-import { Component, OnInit,HostListener,Output ,HostBinding,ViewChild,EventEmitter} from '@angular/core';
+import { Component, OnInit,HostListener,Output,Input,HostBinding,ViewChild,EventEmitter} from '@angular/core';
 import {parent} from '../../total.service';
 import {Http,RequestOptions,Headers} from '@angular/http';
 import {fadeToggle} from '../../animate/animate';
@@ -12,6 +12,7 @@ export class ImageComponent implements OnInit {
   @HostBinding('class')hostClass='btn btn-icon';
   @ViewChild('tp')tp;
   @ViewChild('tp2')tp2;
+  @Input('disUpload')disUpload;
   constructor(
     public parent:parent,
     private http:Http

@@ -2,9 +2,8 @@
 <ng-template #tp>
   <div [style.width.px]="width">
     <div class="tab">
-      <span (click)="modal='url'" [class.selected]="modal=='url'" class="tabBtn">url</span>
-      <span (click)="modal='upload'" [class.selected]="modal=='upload'" class="tabBtn">upload</span>
-      <div class="line"></div>
+        <button (click)="modal='url'" [class.selected]="modal=='url'" class="btn tabBtn">url</button>
+        <button [disabled]="!!disUpload" (click)="modal='upload'" [class.selected]="modal=='upload'" class="btn tabBtn ">upload</button>
     </div>
     <div class="tab-container">
       <div [@FadeToggle]="modal=='url'?'show':'hidden'" class="tab-item full center" >

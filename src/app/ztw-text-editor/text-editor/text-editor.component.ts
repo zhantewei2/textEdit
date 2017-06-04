@@ -1,4 +1,4 @@
-import { Component, OnInit ,ViewChild,forwardRef,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit ,ViewChild,forwardRef,Output,EventEmitter,Input} from '@angular/core';
 import {TotalService,parent} from '../total.service';
 import {tabKey} from '../shortcut-key/tab'
 import {FilterHTML} from '../ts/filterHTML';
@@ -18,6 +18,7 @@ export class TextEditorComponent implements OnInit {
   ) { };
   @ViewChild('modal')modal;
   @ViewChild('textarea')textarea;
+  @Input('disUpload')disUpload;
   textNode:any;
   exec:any=(data)=>{
     return ()=> {
@@ -55,10 +56,8 @@ export class TextEditorComponent implements OnInit {
       node.style[i]=style[i];
     }
   }
-  getHTML(e){
-    let node2=e.target;
-    let node1=document.getElementById('ztw_textEditor');
-    node2.innerText=node1.innerHTML;
+  getHTML(){
+    return this.textNode.innerHTML;
   }
   buttonFn:any={
     unlink:()=>{

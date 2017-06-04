@@ -5,11 +5,10 @@ import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { AppComponent } from './app.component';
 import {ZtwTextEditorModule} from './ztw-text-editor/ztw-text-editor.module';
-import { TestComponent } from './test/test.component';
+
 @NgModule({
   declarations: [
-    AppComponent,
-    TestComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

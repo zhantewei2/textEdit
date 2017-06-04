@@ -7,8 +7,6 @@ export class TotalService {
   store:any={
     fontSize:3
   };
-  preRange:any;
-
   constructor() { }
   cache:any={};
 }
