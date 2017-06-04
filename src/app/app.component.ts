@@ -16,5 +16,9 @@ export class AppComponent {
   ngOnInit(){
 
   }
+  getResult(){
+    let html=this.textEdit.getHTML();
+    console.log(html);
+  }
 }
 
