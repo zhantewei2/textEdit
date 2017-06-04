@@ -1,0 +1,27 @@
+<nav class="btn-group">
+  <ng-template ngFor let-i [ngForOf]="buttonArr">
+    <button class="btn btn-icon"  (click)="i.fn()">
+      <i [class]="'fa fa-'+i.name"> </i>
+    </button>
+    <divide></divide>
+  </ng-template>
+
+  <ztw-font-color></ztw-font-color>
+  <divide></divide>
+  <ztw-font-size></ztw-font-size>
+  <divide></divide>
+  <ztw-href></ztw-href>
+  <divide></divide>
+  <button class="btn btn-icon" (click)="buttonFn.unlink()">
+    <i class="fa fa-unlink"> </i>
+  </button>
+  <divide></divide>
+  <ztw-image (imgBuffer)="uploadImg.emit($event)"></ztw-image>
+</nav>
+<div class="main">
+  <div class="container">
+    <div #textarea id="ztw_textEditor" class="full" contenteditable="true"></div>
+    <ztw-text-editor-modal #modal></ztw-text-editor-modal>
+  </div>
+  <div class="container" contenteditable="true" (click)="getHTML($event)"></div>
+</div>

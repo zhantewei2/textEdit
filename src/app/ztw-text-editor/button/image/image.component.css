@@ -1,0 +1,63 @@
+.line{
+  width:100%;
+  height:1px;
+  background:gainsboro;
+  bottom:0;
+  z-index:-1;
+  position:absolute;
+  box-shadow: 0 -2px 3px gainsboro;
+}
+.test{
+  color:green;
+}
+.tab{position:relative}
+.tabBtn{
+  padding:5px;
+  display:inline-block;
+  text-align: center;
+  min-width:5rem;
+  border-radius:8px 8px 0 0;
+  border:1px solid gainsboro;
+  height:100%;
+}
+.tabBtn:hover{
+  cursor:pointer;
+}
+.selected{
+  border-bottom-color:white;
+  background:white;
+
+}
+.tab-item{
+  position:absolute;top:0;left:0;
+}
+.tab-container{
+  position:relative;
+  margin-top:1rem;
+  min-height:20rem;
+}
+.upload{
+  position:relative;
+  width:60%;
+  height:8rem;
+  background:gainsboro;
+  border-radius:5px;
+  padding:5px;
+}
+.upload img{
+  width:100%;
+  height:100%;
+}
+.close{
+  position:absolute;
+  right:0;
+  top:0;
+  padding:5px;
+  color:gray;
+  background:gainsboro;
+}
+.close:hover{
+  color:white;
+}
+
+

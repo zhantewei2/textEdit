@@ -1,0 +1,39 @@
+<i class="fa fa-file-image-o"> </i>
+<ng-template #tp>
+  <div [style.width.px]="width">
+    <div class="tab">
+      <span (click)="modal='url'" [class.selected]="modal=='url'" class="tabBtn">url</span>
+      <span (click)="modal='upload'" [class.selected]="modal=='upload'" class="tabBtn">upload</span>
+      <div class="line"></div>
+    </div>
+    <div class="tab-container">
+      <div [@FadeToggle]="modal=='url'?'show':'hidden'" class="tab-item full center" >
+        <div style="height:3rem;font-size:14px;color:gray">
+          <i class="fa fa-lightbulb-o mr1"></i>Input URL as the photo source.
+        </div>
+        <div>
+          <i class="fa fa-chain"></i>
+          <input class="input" [(ngModel)]="inputHref" name="imgHref" #imgHref="ngModel" required>
+          <button (click)="inputHref=null" class="btn2 muted">Cancel</button>
+        </div>
+        <p></p>
+        <button [disabled]="!imgHref.valid" (click)="addPicture(inputHref)" class="btn btn-default">Add picture</button>
+      </div>
+      <div [@FadeToggle]="modal=='upload'?'show':'hidden'" class="tab-item full center">
+        <div *ngIf="!imgData" class="upload">
+          <div class="full center">
+            <i class="fa fa-cloud-upload" style="font-size:2rem;"></i>
+            <span class="muted">Drag and drop Or click here</span>
+          </div>
+          <input class="full tab-item btn" style="opacity:0" (change)="fileChange($event)" type="file">
+        </div>
+        <div *ngIf="imgData" class="upload">
+          <div (click)="imgData=null" class="close btn"><i class="fa fa-close"></i></div>
+          <img *ngIf="imgData" [src]="imgData">
+        </div>
+        <p></p>
+        <button [disabled]="imgData?false:true" class="btn btn-default" (click)="upload()">Add picture</button>
+      </div>
+    </div>
+  </div>
+</ng-template>
