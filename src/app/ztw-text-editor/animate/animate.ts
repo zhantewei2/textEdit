@@ -15,7 +15,7 @@ export function pop(t=time){
     state('show',style({visibility:'visible'})),
     transition('hidden=>show',[
       animate(t,keyframes([
-        style({opacity:0,transform:'scale(0.5,0.5)',offset:0}),
+        style({visibility:'visible',opacity:0,transform:'scale(0.5,0.5)',offset:0}),
         style({opacity:1,transform:'scale(1.2,1.2)',offset:0.7}),
         style({opacity:1,transform:'scale(1,1)',offset:1})
       ]))
